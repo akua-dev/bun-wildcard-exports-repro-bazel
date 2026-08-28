@@ -11,9 +11,4 @@ jobs:
       - name: bazel version
         run: bazel version
       - name: bazel build //:repro (toy wildcard-exports pkg via file: dependency)
-        continue-on-error: true
-        run: bazel build //:repro --verbose_failures --sandbox_debug
-      - name: bazel build //:repro (real @effect/platform-bun via registry install)
-        continue-on-error: true
-        working-directory: real-pkg-variant
         run: bazel build //:repro --verbose_failures --sandbox_debug
