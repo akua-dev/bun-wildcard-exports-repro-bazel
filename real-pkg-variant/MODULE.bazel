@@ -1,0 +1,9 @@
+module(name = "bunrepro", version = "0.1.0")
+bazel_dep(name = "platforms", version = "1.1.0")
+http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+http_archive(
+    name = "bun_linux_x64",
+    build_file_content = """filegroup(name = "bun_bin", srcs = ["bun-linux-x64/bun"], visibility = ["//visibility:public"])""",
+    sha256 = "951ee2aee855f08595aeec6225226a298d3fea83a3dcd6465c09cbccdf7e848f",
+    url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.14/bun-linux-x64.zip",
+)
