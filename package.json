@@ -1,0 +1,8 @@
+{
+  "name": "bunrepro-root",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "wildcard-pkg": "file:./pkg-real"
+  }
+}

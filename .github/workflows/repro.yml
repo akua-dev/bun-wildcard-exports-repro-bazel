@@ -1,0 +1,11 @@
+name: bazel bun wildcard-exports repro
+on: { workflow_dispatch: {}, push: { branches: [main] } }
+jobs:
+  repro:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: bazel version
+        run: bazel version
+      - name: bazel build //:repro (verbose failures, full output)
+        run: bazel build //:repro --verbose_failures --sandbox_debug --test_output=all
